@@ -50,22 +50,22 @@ variable rules
 # names_Of_patient=input('what is your name:  ')
 # age=input('How old are you: ')
 # address=input('where do you live>>>> ')
-first_time_patient=print("""is this your first time here>>> 
-                             type:'yes i am new patient' or 'no i am not a new patient'
-                                               >>>""")
+# first_time_patient=print("""is this your first time here>>> 
+#                              type:'yes i am new patient' or 'no i am not a new patient'
+#                                                >>>""")
 # print('my name is '+names_Of_patient+' i am '+age+ 'years old.\n'+'i live at ' +address+ ' and '+first_time_patient)
 # print('my name is',names_Of_patient,' i am',age, 'years old.\n','i live at' ,address, 'and',first_time_patient)
 # print(f'my name is {names_Of_patient}, i am {age}years old.\n i live at {address} and {first_time_patient}')
 
 
-operators python OPERATORS AND IT underscores
-In python programming, operators in general are use to perform operations on values and variables
-types of operators in python
-Arithmetic Opeartors
-comparism Operators
-Logical Operators
-Assignment operators
-Identity OPerators and MEmbership Operators
+# operators python OPERATORS AND IT underscores
+# In python programming, operators in general are use to perform operations on values and variables
+# types of operators in python
+# Arithmetic Opeartors
+# comparism Operators
+# Logical Operators
+# Assignment operators
+# Identity OPerators and MEmbership Operators
 
 
 """
@@ -156,3 +156,24 @@ if question in ans:
 else:
     print('Oh noo', score)
 """
+
+# name='  fukunmi olarenwaju'
+# # print(len(name))
+# name[0]='B'
+# print(name)
+# print(name.replace('f','b','1'))
+# print(name.replace)
+studentName='Darasimiamaladudu'
+# newName=studentName[0:13] + 'lafun'
+# newName=list(studentName)
+# newName=[13:]='pupa'
+# print(type(newName))
+# print(studentName[-4:])
+print(studentName[-13:-9])
+print(studentName[-17:-13])
+print(studentName[-17:-9])
+print(studentName[-9:-4])
+print(studentName[-4:])
+print(studentName[5::3])
+# print(name.strip().capitalize())
+# print(name.replace())
