@@ -5,3 +5,8 @@ Master intermediate python concepts
 Learn by doing
 Build a portfolio of projects
 Keep challenging yourself
+
+
+
+A python dictionary is a data structure that stores the value in key: value pairs.
+python 

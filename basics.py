@@ -65,7 +65,7 @@ variable rules
 # comparism Operators
 # Logical Operators
 # Assignment operators
-# Identity OPerators and MEmbership Operators
+# Identity OPerators and Membership Operators
 
 
 """
@@ -152,9 +152,9 @@ question=input('What is your name: ')
 ans=['Dray', 'Dara']
 if question in ans:
     score+=5
-    print('Correct',score)
+    print('Correct:',score)
 else:
-    print('Oh noo', score)
+    print('Oh noo:', score)
 """
 
 # name='  fukunmi olarenwaju'
@@ -169,11 +169,50 @@ studentName='Darasimiamaladudu'
 # newName=[13:]='pupa'
 # print(type(newName))
 # print(studentName[-4:])
-print(studentName[-13:-9])
-print(studentName[-17:-13])
-print(studentName[-17:-9])
-print(studentName[-9:-4])
-print(studentName[-4:])
-print(studentName[5::3])
+# print(studentName[-13:-9])
+# print(studentName[-17:-13])
+# print(studentName[-17:-9])
+# print(studentName[-9:-4])
+# print(studentName[-4:])
+# print(studentName[5::3])
 # print(name.strip().capitalize())
 # print(name.replace())
+
+
+# assignment(try and error)
+# set1=input('Enter your first set: ')
+# set2=input('Enter your second set: ')
+# # # union_result= set1 .union(set2)
+# # # print(union_result)
+# print("\nset operations:")
+# print("1: union")
+# print("2: intersection")
+# print("3: difference(set2 - set1)")
+# print("4: difference(set1 - set2)")
+# print("5: superset(set2 - set1)")
+# print("6: subset(set2 - set1)")
+# print("7: superset(set1 - set2)")
+# print("8: subset(set1 - set2)")
+# def perform_operation(set1, set2, operation):
+#     if operation == '1':
+#         return set1.union(set2)
+#     elif operation == '2':
+#         return set1.intersection(set2)
+#     elif operation == '3':
+#         return set1.difference(set2)
+#     elif operation == '4':
+#         return set1.subset(set2)
+#     elif operation == '5':
+#         return set2.subset(set1)
+#     elif operation == '6':
+#         return set2.difference(set1)
+#     elif operation == '7':
+#         return set1.superset(set2)
+#     elif operation == '8':
+#         return set2.superset(set1)
+#     else:
+#         return 'Invalid operation!'
+
+    
+    # if _name_ == "_main_":
+#     main()

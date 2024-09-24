@@ -71,7 +71,7 @@ print(fruit.rsplit(",", 1))
 # Application: Joins elements of an iterable (e.g., list) into a single string with a specified separator.
 fruits = ['apple', 'banana', 'orange']
 fruit = ", ".join(fruits)
-print(s)  # "apple, banana, orange"
+print(fruit)  # "apple, banana, orange"
 
 
 
