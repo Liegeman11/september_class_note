@@ -188,6 +188,67 @@
 # print(name.replace())
 
 # Step 1: Create a dictionary for the CBT questions and their correct answers
+# questions = {
+#     "What is 2 + 2?": "4",
+#     "What is the capital of France?": "Paris",
+#     "What is 10 / 2?": "5",
+#     "What is the largest planet in the solar system?": "Jupiter",
+#     "What is the boiling point of water in degrees Celsius?": "100",
+#     "Which language is spoken in Brazil?": "Portuguese",
+#     "What is 5 * 6?": "30",
+#     "What is the square root of 16?": "4",
+#     "In what year did the Titanic sink?": "1912",
+#     "What is the chemical symbol for gold?": "Au"
+# }
+
+# # Step 2: Collect information for exactly three students
+# registered_students = {}  # Dictionary to store registered student names and matric numbers
+
+# # Ask each student for their name and matric number to register
+# for each in range(3):
+#     name = input("Enter your name: ")
+#     matric_number = input("enter your matric no: ")
+#     registered_students[matric_number] = name  # Store the student info in the dictionary
+
+# # Step 3: Ask each student if they want to take the CBT test
+# for each in range(3):
+#     name = input("Enter your matric no to check if you are eligible for the test: ")
+    
+#     # Check if the student is registered
+#     if name not in registered_students:
+#         print(name + ' you are not eligible for the test. Please register first.''\n')
+#         continue  # Skip to the next student
+
+#     # Ask if the registered student is ready to take the test
+#     ready = input("name +' are you ready to take the CBT test? (yes/no)': ").strip().lower()
+
+#     if ready != 'yes':
+#         print("Test terminated.")
+#         break  # Stop if the student is not ready
+
+#     # Step 4: Initialize the score for this student
+#     score = 0
+
+#     # Step 5: Ask the questions and calculate the score
+#     for question, correct_answer in questions.items():
+#         answer = input(question + " ")  # Ask the question
+#         if answer.strip().lower() == correct_answer.lower():  # Check if the answer is correct
+#             score += 10  # Add 10 points for each correct answer
+
+#     # Step 6: Show the student's score
+#     print(f"\n{name}, your score is {score}/100.\n")
+
+#     # Step 7: Ask if the next student is available
+#     if each < 2:  # Only ask if it's not the last student
+#         next_student = input("Is the next student available to take the CBT test? (yes/no): ").strip().lower()
+#         if next_student != 'yes':
+#             print("Test terminated.")
+#             break
+        
+        
+import random
+
+# Step 1: Create a dictionary for the CBT questions and their correct answers
 questions = {
     "What is 2 + 2?": "4",
     "What is the capital of France?": "Paris",
@@ -201,47 +262,177 @@ questions = {
     "What is the chemical symbol for gold?": "Au"
 }
 
-# Step 2: Collect information for exactly three students
-registered_students = {}  # Dictionary to store registered student names and matric numbers
+# Step 2: Register three students by collecting names and matric numbers
+registered_students = {}  # Dictionary to store student names and matric numbers
+students_completed = []   # List to store students who have already taken the test
 
-# Ask each student for their name and matric number to register
-for each in range(3):
-    name = input("Enter your name: ")
-    matric_number = input("enter your matric no: ")
-    registered_students[matric_number] = name  # Store the student info in the dictionary
-
-# Step 3: Ask each student if they want to take the CBT test
-for each in range(3):
-    name = input("Enter your matric no to check if you are eligible for the test: ")
+# Register three students
+for i in range(3):
+    # name = input(f"Register the name of student {i + 1}: ")
+    # matric_number = input(f"Register the matric number of student {i + 1}: ")
+    name = input("Register your name: ")
+    matric_number = input("Register your matric no: ")
+    registered_students[name] = matric_number  # Store the student info in the dictionary
     
-    # Check if the student is registered
-    if name not in registered_students:
-        print(name + ' you are not eligible for the test. Please register first.''\n')
-        continue  # Skip to the next student
+# Step 3: Function to conduct the test
+def conduct_test(student_name):
+    # Login with matric number
+    matric_number = input(f"{student_name}, please enter your matric number to login: ")
+    
+    # Verify that the student is eligible and has not participated yet
+    if student_name not in registered_students or matric_number != registered_students[student_name]:
+        print(f"{student_name}, you are not eligible for the test or your matric number is incorrect.")
+        return
 
-    # Ask if the registered student is ready to take the test
-    ready = input("name +' are you ready to take the CBT test? (yes/no)': ").strip().lower()
+    if student_name in students_completed:
+        print(f"{student_name}, you have already taken the test. You cannot participate again.")
+        return
+
+    # Mark the student as having participated
+    students_completed.append(student_name)
+
+    # Ask if the student is ready to take the test
+    ready = input(f"{student_name}, are you ready to take the CBT test? (yes/no): ").strip().lower()
 
     if ready != 'yes':
         print("Test terminated.")
-        break  # Stop if the student is not ready
+        return  # Stop if the student is not ready
 
     # Step 4: Initialize the score for this student
     score = 0
 
-    # Step 5: Ask the questions and calculate the score
-    for question, correct_answer in questions.items():
+    # Step 5: Ask 5 random questions from the 10 CBT questions
+    random_questions = random.sample(list(questions.items()), 5)  # Select 5 random questions
+    
+    for question, correct_answer in random_questions:
         answer = input(question + " ")  # Ask the question
         if answer.strip().lower() == correct_answer.lower():  # Check if the answer is correct
             score += 10  # Add 10 points for each correct answer
 
     # Step 6: Show the student's score
-    print(f"\n{name}, your score is {score}/100.\n")
+    print(f"\n{student_name}, your score is {score}/50.\n")
 
-    # Step 7: Ask if the next student is available
-    if each < 2:  # Only ask if it's not the last student
-        next_student = input("Is the next student available to take the CBT test? (yes/no): ").strip().lower()
-        if next_student != 'yes':
-            print("Test terminated.")
-            break
+# Step 7: Ask each student if they are available to take the test
+for student_name in registered_students.keys():
+    if student_name in students_completed:
+        continue  # Skip the student if they've already taken the test
+    
+    next_student = input(f"Is {student_name} available to take the CBT test? (yes/no): ").strip().lower()
+    if next_student == 'yes':
+        conduct_test(student_name)  # Call the function for this student
+    else:
+        print(f"{student_name} is not available.")
+        
+        
+        
+        
+        
+        import random
+
+# Step 1: Create a dictionary for the CBT questions and their correct answers
+questions = {
+    "What is 2 + 2?": "4",
+    "What is the capital of France?": "Paris",
+    "What is 10 / 2?": "5",
+    "What is the largest planet in the solar system?": "Jupiter",
+    "What is the boiling point of water in degrees Celsius?": "100",
+    "Which language is spoken in Brazil?": "Portuguese",
+    "What is 5 * 6?": "30",
+    "What is the square root of 16?": "4",
+    "In what year did the Titanic sink?": "1912",
+    "What is the chemical symbol for gold?": "Au"
+}
+
+# Step 2: Register three students by collecting their names and matric numbers
+registered_students = {}  # Dictionary to store student names and matric numbers
+students_completed = []   # List to store students who have already taken the test
+
+# Register three students
+for i in range(3):
+    name = input(f"Register the name of student {i + 1}: ")
+    matric_number = input(f"Register the matric number of student {i + 1}: ")
+    registered_students[name] = matric_number  # Store the student info in the dictionary
+
+# Step 3: Start the CBT test process for registered students
+for student_name in registered_students.keys():
+    
+    if student_name in students_completed:
+        continue  # Skip the student if they've already taken the test
+    
+    # Ask if the student is available to take the test
+    next_student = input(f"Is {student_name} available to take the CBT test? (yes/no): ").strip().lower()
+    
+    if next_student != 'yes':
+        print(f"{student_name} is not available.")
+        continue
+
+    # Step 4: The student must login with their name and matric number
+    matric_number = input(f"{student_name}, please enter your matric number to login: ")
+    
+    # Step 5: Verify that the student is eligible
+    if matric_number != registered_students[student_name]:
+        print(f"{student_name}, your matric number is incorrect. You are not eligible for the test.")
+        continue
+    
+    # Check if the student has already completed the test
+    if student_name in students_completed:
+        print(f"{student_name}, you have already taken the test. You cannot participate again.")
+        continue
+
+    # Mark the student as having participated
+    students_completed.append(student_name)
+
+    # Step 6: Ask if the student is ready to take the test
+    ready = input(f"{student_name}, are you ready to take the CBT test? (yes/no): ").strip().lower()
+
+    if ready != 'yes':
+        print(f"{student_name}, test terminated. You are not taking the test.")
+        continue
+
+    # Step 7: Initialize the score for this student
+    score = 0
+
+    # Step 8: Randomly select 5 questions from the 10 available CBT questions
+    random_questions = random.sample(list(questions.items()), 5)  # Select 5 random questions
+    
+    for question, correct_answer in random_questions:
+        # Step 9: Ask the questions and check the answers
+        answer = input(question + " ")  # Ask the question
+        if answer.strip().lower() == correct_answer.lower():  # Check if the answer is correct
+            score += 10  # Add 10 points for each correct answer
+
+    # Step 10: Show the student's score
+    print(f"\n{student_name}, your score is {score}/50.\n")
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
 
