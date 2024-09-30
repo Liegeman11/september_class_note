@@ -77,9 +77,9 @@ for student_name in registered_students.keys():
     if matric_number != registered_students[student_name]:
         print(f"{student_name}, your matric number is incorrect. You are not eligible for the test.")
         continue
-    # if student_name in students_completed:
-    #     print(f"{student_name}, you have already taken the test. You cannot participate again.")
-    #     continue
+    if student_name in students_completed:
+        print(f"{student_name}, you have already taken the test. You cannot participate again.")
+        continue
 
     students_completed.append(student_name)
     print("hello appended", students_completed)

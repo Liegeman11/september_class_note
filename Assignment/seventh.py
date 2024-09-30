@@ -25,7 +25,7 @@ for each in range(0,5):
 def conduct_test(student_name):
     matric_number = input(f"{student_name}, please enter your matric number to login: ")
     
-    if student_name not in registered_students and matric_number != registered_students[student_name]:
+    if student_name not in registered_students or matric_number != registered_students[student_name]:
         print(f"{student_name}, you are not eligible for the test or your matric number is incorrect.")
         return
 
