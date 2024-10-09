@@ -16,15 +16,26 @@ questions = {
 registered_students={}
 students_completed=[]
 
-for each in range(0,5):
+for each in range(0,3):
     name=input('Register your name: ')
     matric_number= input('Register your matric number: ')
     print('Registration Successful!')
     registered_students[name]= matric_number
-    
 def conduct_test(student_name):
-    matric_number = input(f"{student_name}, please enter your matric number to login: ")
-    
+    attempt = 3
+    while attempt > 0:
+        matric_number = input(f"{student_name}, please enter your matric number to login: ")
+        if matric_number == registered_students[student_name]:
+            break 
+        else:
+            attempt -= 1
+            if attempt > 0:
+                print(f"Incorrect matric number. You have {attempt} attempts left.")
+            else:
+                print(f"Sorry, {student_name}, you have been locked out due to multiple failed attempts.")
+                break
+        if attempt == 0:
+            continue
     if student_name not in registered_students or matric_number != registered_students[student_name]:
         print(f"{student_name}, you are not eligible for the test or your matric number is incorrect.")
         return

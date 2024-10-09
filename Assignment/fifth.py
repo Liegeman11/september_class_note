@@ -16,7 +16,14 @@ print("""                                   1: union
                                             8: subset(set1 - set2)
         """)
 operation1 =input("\nChoose a set operation by entering number (1-8): ")
-result = operation1(set1, set2, operation1)
+if operation1 == '1':
+    result = set1.union(set2)
+elif operation1 == '2':
+    result=set1.intersection(set2)
+elif operation1 == '3':
+    result=set1.different(set2)
+elif operation1 == '4':
+    result=set2.different(set1)
 print("\nResult of the operation: ", result)
 
 
@@ -38,11 +45,11 @@ print("\nResult of the operation: ", result)
 # print("Symmetric Difference:", set1.symmetric_difference(set2))
 
 list_of_sets =[]
-num_of_sety=int(input('how many set do you want to work with: '))
+num_of_set=int(input('how many set do you want to work with: '))
 for each_set in range(1, num_of_set+1):
     set_items=[]
-    items==int(input(f'how many value are in each set {each_set}: '))
-    for itm in range(1, items+1):
+    item ==int(input(f'how many value are in each set {each_set}: '))
+    for itm in range(1, item+1):
         item=input(f'enter value {itm}: ')
 set_items.append(item)
 list_of_sets.append(set(set_items))

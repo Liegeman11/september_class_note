@@ -405,6 +405,17 @@
 #     print(f"\n{student_name}, your score is {score}/50.\n")
 
 
+
+
+
+
+
+
+############################################################################################
+
+
+
+
 # print('hello, world')
 # a=2
 # b=5
@@ -700,67 +711,79 @@
 # print(content)
 # file.close()
 
-def login():
-    pin = "1234"
-    attempts = 3
-    while attempts > 0:
-        entered_pin = input("Enter your PIN: ")
-        if entered_pin == pin:
-            print("Login successful.")
-            return True
-        else:
-            attempts -= 1
-            print(f"Incorrect PIN. Attempts remaining: {attempts}")
-    print("Access denied.")
-    return False
+#######                               OOP                     ##################
 
-def check_balance(balance):
-    print(f"Your current balance is: #{balance:.2f}")
 
-def transfer(balance):
-    if balance <= 0:
-        print("Insufficient balance for transfer.")
-        return balance
+class Dog:
+    def __init__(self, name, breed):
+        self.name=name
+        self.breed=breed
+    def bark(self):
+        re
 
-    account_number = input("Enter the recipient's 10-digit account number: ")
-    if len(account_number) != 10 or not account_number.isdigit():
-        print("Invalid account number. Must be 10 digits.")
-        return balance
 
-    amount = float(input("Enter amount to transfer: "))
-    if amount <= 0:
-        print("Transfer amount must be greater than zero.")
-    elif amount > balance:
-        print("Insufficient funds for this transfer.")
-    else:
-        balance -= amount
-        print(f"Successfully transferred #{amount:.2f} to account {account_number}.")
-        check_balance(balance)
-    return balance
 
-def main():
-    balance = 7000.00
+# def login():
+#     pin = "1234"
+#     attempts = 3
+#     while attempts > 0:
+#         entered_pin = input("Enter your PIN: ")
+#         if entered_pin == pin:
+#             print("Login successful.")
+#             return True
+#         else:
+#             attempts -= 1
+#             print(f"Incorrect PIN. Attempts remaining: {attempts}")
+#     print("Access denied.")
+#     return False
 
-    if login():
-        while True:
-            print("\nATM Menu:")
-            print("1. Check Balance")
-            print("2. Transfer Money")
-            print("3. Logout")
-            choice = input("Choose an option (1-3): ")
+# def check_balance(balance):
+#     print(f"Your current balance is: #{balance:.2f}")
 
-            if choice == '1':
-                check_balance(balance)
-            elif choice == '2':
-                balance = transfer(balance)
-            elif choice == '3':
-                print("Logged out successfully.")
-                break
-            else:
-                print("Invalid choice. Please try again.")
+# def transfer(balance):
+#     if balance <= 0:
+#         print("Insufficient balance for transfer.")
+#         return balance
 
-if _name_ == "_main_":
-    main()
+#     account_number = input("Enter the recipient's 10-digit account number: ")
+#     if len(account_number) != 10 or not account_number.isdigit():
+#         print("Invalid account number. Must be 10 digits.")
+#         return balance
+
+#     amount = float(input("Enter amount to transfer: "))
+#     if amount <= 0:
+#         print("Transfer amount must be greater than zero.")
+#     elif amount > balance:
+#         print("Insufficient funds for this transfer.")
+#     else:
+#         balance -= amount
+#         print(f"Successfully transferred #{amount:.2f} to account {account_number}.")
+#         check_balance(balance)
+#     return balance
+
+# def main():
+#     balance = 7000.00
+
+#     if login():
+#         while True:
+#             print("\nATM Menu:")
+#             print("1. Check Balance")
+#             print("2. Transfer Money")
+#             print("3. Logout")
+#             choice = input("Choose an option (1-3): ")
+
+#             if choice == '1':
+#                 check_balance(balance)
+#             elif choice == '2':
+#                 balance = transfer(balance)
+#             elif choice == '3':
+#                 print("Logged out successfully.")
+#                 break
+#             else:
+#                 print("Invalid choice. Please try again.")
+
+# if __name__ == "_main_":
+#     main()
         
         
 # def login():
@@ -840,6 +863,13 @@ if _name_ == "_main_":
 #                 print('Invalid choice. Please select a valid option.')
 # main()
 
+# import random as rd
+# pd=('abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRXTUVW')
+# random_pd= rd.choices(pd)
+# num= rd.randint(0000, 9999)
+# uba_acc_num= '20' + str(num)
+# print(uba_acc_num)
+
         
         
         
@@ -849,6 +879,140 @@ if _name_ == "_main_":
         
         
         
+        
+        
+        
+class BankUSSD:
+    def __init__(self):
+        self.balance = 10000000
+        self.pin = "1234"  
+        self.service_code = "*234#"
+        self.access_granted = False
+
+    def main(self):
+        entered_code = input("Enter USSD code (e.g., *234#): ")
+        self.access_service(entered_code)
+
+        if self.access_granted:
+            while True:
+                self.display_menu()
+                choice = input("Please select an option: ")
+                
+                if choice == '1':
+                    self.buy_airtime()
+                elif choice == '2':
+                    self.check_balance()
+                elif choice == '3':
+                    self.transfer()
+                elif choice == '4':
+                    self.withdraw()
+                elif choice == '5':
+                    print("Thank you for using our service.")
+                    break
+                else:
+                    print("Invalid option selected. Please try again.")
+
+    def display_menu(self):
+        print("Welcome to Bank USSD Service")
+        print("1. Buy Airtime")
+        print("2. Check Balance")
+        print("3. Transfer")
+        print("4. Withdraw")
+        print("5. Exit")
+
+    def access_service(self, entered_code):
+        if entered_code == self.service_code:
+            self.access_granted = True
+            print("Access granted to USSD service.")
+        else:
+            print("Incorrect USSD code. Access denied.")
+            exit()
+
+    def verify_pin(self, entered_pin):
+        return entered_pin == self.pin
+
+    def deduct_service_fee(self):
+        service_fee = 5
+        if self.balance >= service_fee:
+            self.balance -= service_fee
+            return True
+        else:
+            print("Insufficient balance to cover the service fee.")
+            return False
+
+    def buy_airtime(self):
+        entered_pin = input("Enter your PIN to confirm: ")
+        if not self.verify_pin(entered_pin):
+            print("Incorrect PIN. Transaction canceled.")
+            return
+        phone_number = input("Enter the recipient's phone number: ")
+        if len(phone_number) != 11 or not phone_number.isdigit():
+            print('Invalid account number. Must be 10 digits.')
+            return
+        airtime_amount = float(input('Enter the amount: '))
+        if airtime_amount <= 0:
+            print('Transfer amount must be greater than zero.')
+        elif airtime_amount > self.balance:
+            print('Insufficient funds for this transfer.')
+        else:
+            self.balance -= airtime_amount
+            print(f'Successfully transferred #{airtime_amount} to this phone number:{phone_number}.')
+            # self.check_balance()
+            print(f"Remaining balance: #{self.balance}")
+    def check_balance(self):
+        entered_pin = input("Enter your PIN to confirm: ")
+        if not self.verify_pin(entered_pin):
+            print("Incorrect PIN. Transaction canceled.")
+            return
+        else:
+            print(f'Your current balance is: #{self.balance}.')
+
+    def transfer(self):
+        entered_pin = input("Enter your PIN to confirm: ")
+        if not self.verify_pin(entered_pin):
+            print("Incorrect PIN. Transaction canceled.")
+            return
+
+        if self.balance <= 0:
+            print('Insufficient balance for transfer')
+            return
+        
+        account_number = input("Enter the recipient's 10-digit account number: ")
+        if len(account_number) != 10 or not account_number.isdigit():
+            print('Invalid account number. Must be 10 digits.')
+            return
+        
+        amount = float(input('Enter the amount: '))
+        if amount <= 0:
+            print('Transfer amount must be greater than zero.')
+        elif amount > self.balance:
+            print('Insufficient funds for this transfer.')
+        else:
+            self.balance -= amount
+            print(f'Successfully transferred #{amount} to account {account_number}.')
+            # self.check_balance()
+            print(f"Remaining balance: #{self.balance}")
+
+    def withdraw(self):
+        entered_pin = input("Enter your PIN to confirm: ")
+        if not self.verify_pin(entered_pin):
+            print("Incorrect PIN. Transaction canceled.")
+            return
+
+        amount = float(input("Enter amount to withdraw: "))
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            print(f"#{amount} has been withdrawn.")
+            # self.check_balance()
+            print(f"Remaining balance: #{self.balance}")
+        elif amount > self.balance:
+            print("Insufficient funds.")
+        else:
+            print("Invalid amount. Please enter a positive number.")
+
+bank_ussd = BankUSSD()
+bank_ussd.main()
+
         
         
         

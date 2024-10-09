@@ -51,7 +51,19 @@ questions = {
 
     
     
-
+import random
+questions = {
+    "1.What is 2 + 2?\n (a)22 (b)4 (c)8 \nanswer: ": "b",
+    "2.What is the capital of France?\n (a)USA (b)Ghana (c)Paris:\n": "c",
+    "3.What is 10 / 2?\n (a)3 (b)5 (c)12:\n ": "b",
+    "4.What is the largest planet in the solar system?\n (a)Pluto (b)Venus (c)Mars (d)Jupiter :\n ": "d",
+    "5.What is the boiling point of water in degrees Celsius?\n (a)95 (b)90 (c)100 (d)35 :\n ": "c",
+    "6.What is 5 * 6?\n (a)11 (b)56 (c)30 (d)1 :\n ": "c",
+    "7.What is the square root of 16?\n (a)4 (b)64 (c)36 (d)2 :\n  ": "a",
+    "8.In what year did the Titanic sink?\n (a)1991 (b)1912 (c)1921 (d)1921 :\n ": "b",
+    "9.What is the chemical symbol for water?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "b",
+    "10.What is the chemical symbol for gold?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "a"
+}
 registered_students = {}  
 students_completed = []   
 
@@ -61,9 +73,8 @@ for each in range(0,3):
     print("Registration successful!")
     registered_students[name] = matric_number 
 print(registered_students)
-print("hello 1", students_completed)
+# print("hello 1", students_completed)
 for student_name in registered_students.keys():
-    
     if student_name in students_completed:
         print("hello 2 in loop", students_completed)
         continue  
@@ -72,15 +83,28 @@ for student_name in registered_students.keys():
     if next_student != 'yes':
         print(f"{student_name} is not available.")
         continue
-    matric_number = input(f"{student_name}, please enter your matric number to login: ")
-    
-    if matric_number != registered_students[student_name]:
-        print(f"{student_name}, your matric number is incorrect. You are not eligible for the test.")
+    # attempt =3
+    # matric_number = input(f"{student_name}, please enter your matric number to login: ")
+    # if matric_number != registered_students[student_name]:
+    #     print(f"{student_name}, your matric number is incorrect. You are not eligible for the test.")
+    #     continue
+    attempt = 3
+    while attempt > 0:
+        matric_number = input(f"{student_name}, please enter your matric number to login: ")
+        if matric_number == registered_students[student_name]:
+            break 
+        else:
+            attempt -= 1
+            if attempt > 0:
+                print(f"Incorrect matric number. You have {attempt} attempts left.")
+            else:
+                print(f"Sorry, {student_name}, you have been locked out due to multiple failed attempts.")
+                break
+    if attempt == 0:
         continue
     if student_name in students_completed:
         print(f"{student_name}, you have already taken the test. You cannot participate again.")
         continue
-
     students_completed.append(student_name)
     print("hello appended", students_completed)
 
@@ -119,14 +143,20 @@ for student_name in registered_students.keys():
 
 # registered_students={}
 # students_completed=[]
-# def student_list():
-#     for each in range(0,3):
-#         name=('Register your name: ')
-#         matric_number=('Register your matric number: ')
-#         # registered_students[name]= matric_number
-#         registered_student = name, matric_number
-#         registered_students.append(registered_student)
-#     print(registered_students)
-# student_list()
-
-
+# for each in range(0, 3):
+#     name=input('Enter your name: ')
+#     matric_number=input('Enter your matric number: ')
+#     registered_students[name]= matric_number
+# for each in range(0, 3):
+#     ready=input(f'is {student_name } available to take the test(yes or no): ')
+#     if ready != 'yes':
+#         print('test terminated!')
+#         continue
+# # attempt=3
+# # for attempt >0:
+# # matric=input(f'{student_name}Enter your matric number to check if you are eligible for the test')
+# # if student_name or matric_number == registered_students:
+# #     print(f'{student_name} are you ready to take the test(yes or no)')
+# #     attempt -=1
+# #     for attempt >0:
+# #         print(f"{student_name}")
