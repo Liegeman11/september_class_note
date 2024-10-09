@@ -62,14 +62,20 @@ def main():
     
     if login():
         while True:
-            
-            print("\n=== ATM Main Menu ===")
-            print("1. Check Balance")
-            
-            print("2. Transfer Money")
-            print("3. Withdraw Money")
-            print("4. Exit")
+            print("""\n=== ATM Main Menu ===
+                        1. Check Balance
+                        2. Transfer Money
+                        3. Withdraw Money
+                        4. Exit
+""")
             choice=input('Choose an option (1-4): ')
+            
+            # print("\n=== ATM Main Menu ===")
+            # print("1. Check Balance")
+            
+            # print("2. Transfer Money")
+            # print("3. Withdraw Money")
+            # print("4. Exit")
 
             if choice == '1':
                 check_balance(balance)
@@ -82,5 +88,5 @@ def main():
                 print('Log out successfully. Thanks for using the ATM machine.')
             else:
                 print('Invalid choice. Please select a valid option.')
-main()
+# main()
 
