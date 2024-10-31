@@ -16,10 +16,12 @@ variable rules
 # student_name='Temi','Dara','tikristi','Taiwo'
 # print(student_name)
 
+####     Rule for naming variable     ####
+
 # the name must be descriptive
 # you should not start naming with numbering
-# do not use reserve words for naming
-# no spacing in between names 
+# do not use reserve words for naming your varible
+# no spacing in between names
 # you can not special characters to begin your naming
 
 # fruits='orange','mango'
@@ -42,7 +44,8 @@ variable rules
 # print(type(fruit2))
 # print(len(fruit2))
 # print(len(fruit2))
-# names_Of_Student=input('what is your name')
+# names_Of_Student=input('what is your name: ')
+# print(names_Of_Student )
 
 
 # class work: 
@@ -137,7 +140,8 @@ NOT: 1. True if the operand is false not x
 
 
 
-"""x = 24
+"""
+x = 24
 y = 20
 list = [10, 20, 30, 40, 50]
 if (x not in list):

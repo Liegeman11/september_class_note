@@ -255,3 +255,18 @@
 # print(my_train.mobility())
 
 
+name= 'tolu'
+color= 'red'
+weight= '50kg'
+age= 20
+print(name, color, weight, age)
+print(f'my name is {name}, i am putting on {color} grown. i am {age} years old with a weight of {weight}')
+
+
+first_name=input('enter your first name: ')
+last_name=input('Enter your last name: ')
+location=input('Where is your location: ')
+address=input('where do you live: ')
+email=input('Enter your email address: ')
+details={'first_name':first_name, 'last_name':last_name, 'location':location, 'address':address, 'email': email}
+print(details)

@@ -1,15 +1,20 @@
 import random
 questions = {
-    "1.What is 2 + 2?\n (a)22 (b)4 (c)8 :\n ": "b",
-    "2.What is the capital of France?\n (a)USA (b)Ghana (c)Paris:\n": "c",
-    "3.What is 10 / 2?\n (a)3 (b)5 (c)12:\n ": "b",
-    "4.What is the largest planet in the solar system?\n (a)Pluto (b)Venus (c)Mars (d)Jupiter :\n ": "d",
-    "5.What is the boiling point of water in degrees Celsius?\n (a)95 (b)90 (c)100 (d)35 :\n ": "c",
-    "6.What is 5 * 6?\n (a)11 (b)56 (c)30 (d)1 :\n ": "c",
-    "7.What is the square root of 16?\n (a)4 (b)64 (c)36 (d)2 :\n  ": "a",
-    "8.In what year did the Titanic sink?\n (a)1991 (b)1912 (c)1921 (d)1921 :\n ": "b",
-    "9.What is the chemical symbol for water?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "b",
-    "10.What is the chemical symbol for gold?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "a"
+    ">>.What is 2 + 2?\n (a)22 (b)4 (c)8 :\n ": "b",
+    ">>.What is the capital of France?\n (a)USA (b)Ghana (c)Paris:\n": "c",
+    ">>.What is 10 / 2?\n (a)3 (b)5 (c)12:\n ": "b",
+    ">>.What is the largest planet in the solar system?\n (a)Pluto (b)Venus (c)Mars (d)Jupiter :\n ": "d",
+    ">>.What is the boiling point of water in degrees Celsius?\n (a)95 (b)90 (c)100 (d)35 :\n ": "c",
+    ">>.What is 5 * 6?\n (a)11 (b)56 (c)30 (d)1 :\n ": "c",
+    ">>.What is the square root of 16?\n (a)4 (b)64 (c)36 (d)2 :\n  ": "a",
+    ">>.In what year did the Titanic sink?\n (a)1991 (b)1912 (c)1921 (d)1921 :\n ": "b",
+    ">>.What is the chemical symbol for water?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "b",
+    ">>.What is the chemical symbol for gold?\n (a)Au (b)H2O (c)HO2 (d)gu :\n ": "a",
+    ">>.What is the primary function of the legislative branch of government: (a) To enforce laws (b) To interpret laws (c) To make laws (d) To implement polices ":'c',
+    ">>.Which of the following is not a renewable source of energy (a)Solar energy (b) Wind energy (c) Coal (d) Hydropower ":'c',
+    ">>.What is the value of x? when 3x + 7 = 22 (a)10 (b)2 (c)5 (d)7 ":'c',
+    ">>.In plants, photosynthesis primary takes place in which part? (a)Roots (b)Stem (c)Leaves (d)Flowers":'c',
+    ">>.which of the following is the longest river in Nigeria (a)River Benue (b)River Kaduna (c)River Niger (d)River Osun ":'c'
 }
 
 
@@ -17,15 +22,19 @@ registered_students={}
 students_completed=[]
 
 for each in range(0,3):
-    name=input('Register your name: ')
-    matric_number= input('Register your matric number: ')
-    print('Registration Successful!')
-    registered_students[name]= matric_number
+    while True:
+        name=input('Register your name: ')
+        if name in registered_students:
+            print(f"\n {name} already exist, use another name. ")
+        matric_Number= input('Register your matric number: ')
+        print('Registration Successful!')
+        registered_students[name]= matric_Number
+        break
 def conduct_test(student_name):
     attempt = 3
     while attempt > 0:
-        matric_number = input(f"{student_name}, please enter your matric number to login: ")
-        if matric_number == registered_students[student_name]:
+        matric_Number = input(f"{student_name}, please enter your matric number to login: ")
+        if matric_Number == registered_students[student_name]:
             break 
         else:
             attempt -= 1
@@ -36,7 +45,7 @@ def conduct_test(student_name):
                 break
         if attempt == 0:
             continue
-    if student_name not in registered_students or matric_number != registered_students[student_name]:
+    if student_name not in registered_students or matric_Number != registered_students[student_name]:
         print(f"{student_name}, you are not eligible for the test or your matric number is incorrect.")
         return
 

@@ -1,12 +1,7 @@
-#  Build an ATM machine using function
+###                        Build an ATM machine using function             ####
 
 # # solution
 
-# # balance = 500,000,000,000
-
-# # user=input("""welcome to USSD Banking. N6.98 network Charge will apply to your account \nfor banking service on this channel. press 1 to accept or 2 to reject >>>
-# #                                         1.Accept
-# #                                         2.Reject
 
 def login():
     pin ='1234'
@@ -23,12 +18,8 @@ def login():
             else:
                 print('Too many attempt. existing')
             return False
-        
-
-
 def check_balance(balance):
     print(f'Your current balance is: #{balance}.')
-
 def transfer(balance):
     if balance <= 0:
         print('Insufficient balance for transfer')
@@ -59,7 +50,6 @@ def withdraw(balance):
     return balance
 def main():
     balance= 5000
-    
     if login():
         while True:
             print("""\n=== ATM Main Menu ===
@@ -69,14 +59,6 @@ def main():
                         4. Exit
 """)
             choice=input('Choose an option (1-4): ')
-            
-            # print("\n=== ATM Main Menu ===")
-            # print("1. Check Balance")
-            
-            # print("2. Transfer Money")
-            # print("3. Withdraw Money")
-            # print("4. Exit")
-
             if choice == '1':
                 check_balance(balance)
             elif choice == '2':
@@ -88,5 +70,5 @@ def main():
                 print('Log out successfully. Thanks for using the ATM machine.')
             else:
                 print('Invalid choice. Please select a valid option.')
-# main()
+main()
 

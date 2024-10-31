@@ -4,6 +4,7 @@
 
 list_of_studt2=list(['kiki','bolu',['titi','ope','ayo']])
 list_of_studt3=list(['kiki','bolu',['titi','ope','ayo'],'kemi','jola'])
+list_of_studt33=(['kiki','bolu',['titi','ope','ayo'],'kemi','jola'])
 list_of_item=['1',3j, 6.8, True, ['taiwo','temi']]
 list_of_studt4=[['kiki','bolu','tope'],['fola','grace',],'Temi']
 
@@ -17,6 +18,9 @@ list_of_studt4=[['kiki','bolu','tope'],['fola','grace',],'Temi']
 # print(len(list_of_studt3))
 # print(len(list_of_studt4))
 # print(list_of_studt3[2])
+# print(list_of_item.clear())
+# print(list_of_studt3.count('bolu'))
+print(list_of_studt33.append('temi'))
 # print(list_of_studt3[2][2])
 # print(list_of_studt4[0][1])
 # print(list_of_studt4[1][0])
@@ -39,10 +43,10 @@ list_of_studt4=[['kiki','bolu','tope'],['fola','grace',],'Temi']
 # Declare an empty list get 5 student name and age, store them in a varible and display the content of the variable in your teminal
 # solution
 
-a = [1, 2, 3]
-b = a
-b.append(4)
-print(a)
+# a = [1, 2, 3]
+# b = a
+# b.append(4)
+# print(a)
 
 # list_student=[]
 # for each in range(0,5):
@@ -166,7 +170,7 @@ print(a)
     
     
     # SET
-    # python set is an ordered collection of data types that is iterable, mutable, and has no duplicable elements.
+    # python set is an unordered collection of data types that is iterable, mutable, and has no duplicate elements.
     
 # set1={1, 2, 3, 4}
 # set2=set((8 ,4, 3, 9))
@@ -174,7 +178,11 @@ print(a)
 # # print(type(set2))
 # set1.add(8)
 # set1.update((12, 14, 15))
+# set1.discard(15)
 # set1.remove(15)
+# set1.pop()
+print(set1)
+
 # set3=set1.copy()
 # set1.add(10)
 # print(set3)
@@ -186,6 +194,8 @@ print(a)
 # set3=set1.difference(set2)
 # print(set3)
 # electronics.
+
+                        #dictionaries#
 
 # electronics={'laptop':'Lenovo','phone':'Nokia', 'mifi':'MTN'}
 # electronics2=dict([(12, 'hp'),(13, 'del')])
@@ -210,3 +220,9 @@ print(a)
 # print(electronics)
 # print(type(electronics2))
 # print(type(electronics2))
+
+
+
+
+
+

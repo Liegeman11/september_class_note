@@ -69,7 +69,7 @@ def college(name, location):
 college(name='SQI', location='Yoaco')
 college(location='Yoaco', name='SQI')
 
-## 3. psitional args
+## 3. positional args
 def college_class(college, level):
     print(f'My name is Bolu I study at {college} and my level is {level}')
     

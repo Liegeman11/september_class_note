@@ -714,12 +714,12 @@
 #######                               OOP                     ##################
 
 
-class Dog:
-    def __init__(self, name, breed):
-        self.name=name
-        self.breed=breed
-    def bark(self):
-        re
+# class Dog:
+    # def __init__(self, name, breed):
+        # self.name=name
+        # self.breed=breed
+    # def bark(self):
+        # re
 
 
 
@@ -870,7 +870,7 @@ class Dog:
 # uba_acc_num= '20' + str(num)
 # print(uba_acc_num)
 
-        
+
         
         
         

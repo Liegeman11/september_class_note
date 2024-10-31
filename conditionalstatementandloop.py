@@ -46,12 +46,12 @@
 
 
 
-# #while loop or while True
+#while loop or while True
 
 # num=0
 # while True:
 #     num+=1
-#     print('Welcone!!!')
+#     print('Welcome!!!')
 #     if num==5:
 #         break
 
