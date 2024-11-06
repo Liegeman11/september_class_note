@@ -607,71 +607,71 @@ tuple
 
 
 
-from functools import reduce
+# from functools import reduce
 
-print("Hello, you are welcome!")
-sets = []
-num_of_set = int(input("Enter the number of sets you want to work with: "))
+# print("Hello, you are welcome!")
+# sets = []
+# num_of_set = int(input("Enter the number of sets you want to work with: "))
 
-# Collect elements for each set
-for each in range(1, num_of_set + 1):
-    print(f"\nEntering the details for set {each}")
-    num_element = int(input(f"Enter the number of elements in set {each}: "))
-    set_info = set()  # Using a set directly
-    for all in range(1, num_element + 1):
-        enter_element = int(input(f"Enter element {all} in set {each}: "))
-        set_info.add(enter_element)
-    sets.append(set_info)  # Appending the set directly
+# # Collect elements for each set
+# for each in range(1, num_of_set + 1):
+#     print(f"\nEntering the details for set {each}")
+#     num_element = int(input(f"Enter the number of elements in set {each}: "))
+#     set_info = set()  # Using a set directly
+#     for all in range(1, num_element + 1):
+#         enter_element = int(input(f"Enter element {all} in set {each}: "))
+#         set_info.add(enter_element)
+#     sets.append(set_info)  # Appending the set directly
 
-# Menu for set operations
-while True:
-    print("""               
-    1. Intersection
-    2. Union
-    3. Difference
-    4. Symmetric Difference
-    5. Disjoint
-    6. Subset
-    7. Superset
-    """)
+# # Menu for set operations
+# while True:
+#     print("""               
+#     1. Intersection
+#     2. Union
+#     3. Difference
+#     4. Symmetric Difference
+#     5. Disjoint
+#     6. Subset
+#     7. Superset
+#     """)
 
-    choice = input("Choose the operation you want to perform (1-7): ")
-    if choice in ['1', '2', '3', '4', '5', '6', '7']:
-        selected_indices = input("Enter the indices of sets to work with (e.g., 1 2): ")
-        selected_sets = [sets[int(index) - 1] for index in selected_indices.split() if index.isdigit() and 1 <= int(index) <= num_of_set]
+#     choice = input("Choose the operation you want to perform (1-7): ")
+#     if choice in ['1', '2', '3', '4', '5', '6', '7']:
+#         selected_indices = input("Enter the indices of sets to work with (e.g., 1 2): ")
+#         selected_sets = [sets[int(index) - 1] for index in selected_indices.split() if index.isdigit() and 1 <= int(index) <= num_of_set]
         
-        if len(selected_sets) < 2:
-            print("Please select at least two valid sets.")
-            continue
+#         if len(selected_sets) < 2:
+#             print("Please select at least two valid sets.")
+#             continue
 
-        if choice == '1':  # Intersection
-            result = reduce(lambda x, y: x & y, selected_sets)
-            print("Intersection of selected sets:", result)
-        elif choice == '2':  # Union
-            result = reduce(lambda x, y: x | y, selected_sets)
-            print("Union of selected sets:", result)
-        elif choice == '3':  # Difference
-            result = reduce(lambda x, y: x - y, selected_sets)
-            print("Difference of selected sets:", result)
-        elif choice == '4':  # Symmetric Difference
-            result = reduce(lambda x, y: x ^ y, selected_sets)
-            print("Symmetric Difference of selected sets:", result)
-        elif choice == '5':  # Disjoint
-            result = all(selected_sets[i].isdisjoint(selected_sets[j]) for i in range(len(selected_sets)) for j in range(i + 1, len(selected_sets)))
-            print("Are the selected sets pairwise disjoint?", result)
-        elif choice == '6':  # Subset
-            result = all(selected_sets[0].issubset(s) for s in selected_sets[1:])
-            print("Is the first set a subset of all selected sets?", result)
-        elif choice == '7':  # Superset
-            result = all(selected_sets[0].issuperset(s) for s in selected_sets[1:])
-            print("Is the first set a superset of all selected sets?", result)
-    else:
-        print("Invalid choice. Please select a number between 1 and 7.")
+#         if choice == '1':  # Intersection
+#             result = reduce(lambda x, y: x & y, selected_sets)
+#             print("Intersection of selected sets:", result)
+#         elif choice == '2':  # Union
+#             result = reduce(lambda x, y: x | y, selected_sets)
+#             print("Union of selected sets:", result)
+#         elif choice == '3':  # Difference
+#             result = reduce(lambda x, y: x - y, selected_sets)
+#             print("Difference of selected sets:", result)
+#         elif choice == '4':  # Symmetric Difference
+#             result = reduce(lambda x, y: x ^ y, selected_sets)
+#             print("Symmetric Difference of selected sets:", result)
+#         elif choice == '5':  # Disjoint
+#             result = all(selected_sets[i].isdisjoint(selected_sets[j]) for i in range(len(selected_sets)) for j in range(i + 1, len(selected_sets)))
+#             print("Are the selected sets pairwise disjoint?", result)
+#         elif choice == '6':  # Subset
+#             result = all(selected_sets[0].issubset(s) for s in selected_sets[1:])
+#             print("Is the first set a subset of all selected sets?", result)
+#         elif choice == '7':  # Superset
+#             result = all(selected_sets[0].issuperset(s) for s in selected_sets[1:])
+#             print("Is the first set a superset of all selected sets?", result)
+#     else:
+#         print("Invalid choice. Please select a number between 1 and 7.")
 
-    another = input("Do you want to perform another operation (yes/no)? ").strip().lower()
-    if another != 'yes':
-        print('Exiting the program')
-        break
+#     another = input("Do you want to perform another operation (yes/no)? ").strip().lower()
+#     if another != 'yes':
+#         print('Exiting the program')
+#         break
 
 
 
@@ -740,4 +740,45 @@ while True:
 #     if another != 'yes':
 #         print('Exiting the program')
 #         break
+
+# def greet_user(name):
+#     print(f"Hello, You are welcome {name}")
+# name2=input('enter your name: ')
+# greet_user(name2)
+#     if user == '1':
+#         print('welcome')
+#     elif user == '2':
+#         print('welcome!!! you can now register ')
+#     elif user == '3':
+#         print('what do you want? ')
+#     elif user == '4':
+#         exit()
+# landing_page()
+
+# def landing_page():
+#     print("""
+#                                     welcome to JPGROUPS OF SCHOOL
+#                 SELECT
+#                 1.REGISTER
+#                 2.EXIT
+#     """)
+    
+# def login(user_name):
+#     user_name= input("enter your name: ")
+# login("tunde")
+def login(name,email):
+    print("Hello, You are welcome")
+    print(f"{name},with email {email} You are successfully login")
+user_name=input("Enter your name to login: ")
+emails=input("Enter your email to login: ")
+login(user_name, emails)
+
+
+def login(user_name,email):
+    print("Hello, You are welcome")
+    user_name=input("Enter your name to login: ")
+    email=input("Enter your email to login: ")
+    print(f"{user_name},with email {email} You are successfully login")
+login(user_name= "", email= "")
+
 
