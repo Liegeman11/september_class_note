@@ -1,0 +1,24 @@
+{
+    "taiwomichealemmanuel@gmail.com": {
+        "Name": "Taiwo Micheal Emmanuel",
+        "Email": "taiwomichealemmanuel@gmail.com",
+        "Address": "Adenike",
+        "State_of_origin": "Osun state",
+        "lga": "Ife east",
+        "Occupation": "Business",
+        "Country": "Nigeria",
+        "identification": "123456789",
+        "Password": "121213"
+    },
+    "favourbusayo@gmail.com": {
+        "Name": "Adekunle Favour Busayo",
+        "Email": "favourbusayo@gmail.com",
+        "Address": "Aroje Area",
+        "State_of_origin": "Oyo state",
+        "lga": "Ogbomosho north",
+        "Occupation": "Student",
+        "Country": "Nigeria",
+        "identification": "123453678",
+        "Password": "131312"
+    }
+}

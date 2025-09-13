@@ -25,7 +25,7 @@ variable rules
 # you can not special characters to begin your naming
 
 # fruits='orange','mango'
-# fruit2='orange',
+# fruit2='orange, banana' 'pineapple, cashew'
 
 # _name='bolu'
 # print(_name)
@@ -42,11 +42,10 @@ variable rules
 # #inbuilt python function
 # print(type(fruits))
 # print(type(fruit2))
-# print(len(fruit2))
+# print(len(fruits))
 # print(len(fruit2))
 # names_Of_Student=input('what is your name: ')
-# print(names_Of_Student )
-
+# print(f'your name is {names_Of_Student}' )
 
 # class work: 
 
@@ -59,7 +58,6 @@ variable rules
 # print('my name is '+names_Of_patient+' i am '+age+ 'years old.\n'+'i live at ' +address+ ' and '+first_time_patient)
 # print('my name is',names_Of_patient,' i am',age, 'years old.\n','i live at' ,address, 'and',first_time_patient)
 # print(f'my name is {names_Of_patient}, i am {age}years old.\n i live at {address} and {first_time_patient}')
-
 
 # operators python OPERATORS AND IT underscores
 # In python programming, operators in general are use to perform operations on values and variables
@@ -115,13 +113,14 @@ NOT: 1. True if the operand is false not x
 """
 
 # value2=7
-# result=not value2
-# # result = bool(value2)
+# result= value2
+# result = bool(value2)
 # print(result)
 
 # a= 'mango'
-# b= 'orange'
-# if len(a) and len(b) == 5:
+# b= 'orange' 
+# # if len(a) and len(b) == 5:
+# if len(a) == len(b):
 #     print('both  are the same length')
 # else:
 #     print('both of them are not of the same length')
@@ -140,34 +139,43 @@ NOT: 1. True if the operand is false not x
 
 
 
-"""
-x = 24
-y = 20
-list = [10, 20, 30, 40, 50]
-if (x not in list):
-    print("x is NOT present in given list")
-else:
-    print("x is present in given list")
-"""
 
-"""
-score=0
-question=input('What is your name: ')
-ans=['Dray', 'Dara']
-if question in ans:
-    score+=5
-    print('Correct:',score)
-else:
-    print('Oh noo:', score)
-"""
+# x = 24
+# y = 20
+# list = [10, 20, 30, 40, 50]
+# if (x not in list):
+#     print("x is not present in given list")
+# else:
+#     print("x is present in given list")
 
-# name='  fukunmi olarenwaju'
-# # print(len(name))
+
+
+# score=0
+# question=input('What is your name: ')
+# ans=['Dray', 'Dara']
+# if question in ans:
+#     score+=5
+#     print('Correct:',score)
+# else:
+#     print('Oh noo:', score)
+
+
+# score=0
+# question=input( 'What is your name: ').strip().lower()
+# ans= 'taiwo'
+# if question != ans:
+#     print('oh noooo:', score)
+# else:
+#     score+=5
+#     print('yes you are correct:', score)
+
+# name='fukunmi olarenwaju'
+# print(len(name))
 # name[0]='B'
 # print(name)
 # print(name.replace('f','b','1'))
 # print(name.replace)
-studentName='Darasimiamaladudu'
+# studentName='Darasimiamaladudu'
 # newName=studentName[0:13] + 'lafun'
 # newName=list(studentName)
 # newName=[13:]='pupa'
@@ -184,10 +192,10 @@ studentName='Darasimiamaladudu'
 
 
 # assignment(try and error)
-# set1=input('Enter your first set: ')
-# set2=input('Enter your second set: ')
-# # # union_result= set1 .union(set2)
-# # # print(union_result)
+set1=input('Enter your first set: ')
+set2=input('Enter your second set: ')
+# # union_result= set1 .union(set2)
+# # print(union_result)
 # print("\nset operations:")
 # print("1: union")
 # print("2: intersection")
@@ -197,26 +205,38 @@ studentName='Darasimiamaladudu'
 # print("6: subset(set2 - set1)")
 # print("7: superset(set1 - set2)")
 # print("8: subset(set1 - set2)")
-# def perform_operation(set1, set2, operation):
-#     if operation == '1':
-#         return set1.union(set2)
-#     elif operation == '2':
-#         return set1.intersection(set2)
-#     elif operation == '3':
-#         return set1.difference(set2)
-#     elif operation == '4':
-#         return set1.subset(set2)
-#     elif operation == '5':
-#         return set2.subset(set1)
-#     elif operation == '6':
-#         return set2.difference(set1)
-#     elif operation == '7':
-#         return set1.superset(set2)
-#     elif operation == '8':
-#         return set2.superset(set1)
-#     else:
-#         return 'Invalid operation!'
 
-    
-    # if _name_ == "_main_":
-#     main()
+
+print("""\nset operations:
+1: union
+2: intersection
+3: difference(set2 - set1)
+4: difference(set1 - set2)
+5: superset(set2 - set1)
+6: subset(set2 - set1)
+7: superset(set1 - set2)
+8: subset(set1 - set2)
+""")
+
+
+def perform_operation(set1, set2, operation):
+    if operation == '1':
+        return set1.union(set2)
+    elif operation == '2':
+        return set1.intersection(set2)
+    elif operation == '3':
+        return set1.difference(set2)
+    elif operation == '4':
+        return set1.subset(set2)
+    elif operation == '5':
+        return set2.subset(set1)
+    elif operation == '6':
+        return set2.difference(set1)
+    elif operation == '7':
+        return set1.superset(set2)
+    elif operation == '8':
+        return set2.superset(set1)
+    else:
+        return 'Invalid operation!'
+# if __name__ == "_main_":
+# # main()

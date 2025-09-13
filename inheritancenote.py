@@ -14,7 +14,7 @@
 #     def __init__(self, name, breed, height):
 #         super().__init__(name,breed)
 #         self.height= height
-#     def makesound(self):
+#     def makeSound(self):
 #         return (f'{self.name} is barking')
 
 # class Goat(Animal):
@@ -22,7 +22,7 @@
 #     def __init__(self, name, breed, behavior):
 #         super().__init__(name,breed)
 #         self.behavior= behavior
-#     def makesound(self):
+#     def makeSound(self):
 #         return (f'{self.name} is bleating')
 
 # dog1=Dog('stacey', 'rottweiler', '24')
@@ -34,8 +34,8 @@
 # dog1.eat()
 # # print(goat1.eat())
 # goat1.eat()
-# print(dog1.makesound())
-# print(goat1.makesound())
+# print(dog1.makeSound())
+# print(goat1.makeSound())
 # # print(goat1.animal_type)
 
 
@@ -53,7 +53,7 @@
 #         self.engine_type=engine_type
         
 #     def mobility(self):
-#         return (f'The {self.model}, a {self.wheels} wheels  {self.types}, is primarly used for {self.meansOfTransport} transportation. it has {Vehicle.Engine} engine of {self.engine_type} and {Vehicle.Brake} brake. ')
+#         return (f'The {self.model}, a {self.wheels} wheels  {self.types}, is primarily used for {self.meansOfTransport} transportation. it has {Vehicle.Engine} engine of {self.engine_type} and {Vehicle.Brake} brake. ')
         
 # class Car(Vehicle):
 #     pass
@@ -74,7 +74,7 @@
         
 # my_Car=Car('car','Lexus lx600', 'Four', 'Road', 'V8')
 # my_truck=Truck('truck','GMC Sierra 1500', 'eight', 'Road', 'V6')
-# my_buses=Buses('Buses','Maxzda', 'Four', 'Road', 'V7')
+# my_buses=Buses('Buses','Mazda', 'Four', 'Road', 'V7')
 # my_motorcycles=Motorcycles('motorcycle','boxer', 'two', 'Road', 'V2')
 # my_bicycle=Bicycle('Bicycle','Lexus lx600', 'Four', 'two', 'V8')
 # my_ship=Ship('ship','Lexus lx600', 'Four', 'water', 'V8')

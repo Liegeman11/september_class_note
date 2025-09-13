@@ -10,9 +10,9 @@ inheritance
 methods
 """
 
-# class Animal:
-#     def sleep(self):
-#         print('The dog is sleeping')
+class Animal:
+    def sleep(self):
+        print('The dog is sleeping')
 
 # dog=Animal()
 # print(dog.sleep())

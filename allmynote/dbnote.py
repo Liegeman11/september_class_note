@@ -201,3 +201,40 @@ myCursor = myCon.cursor()
 # myCursor.execute(query, val)
 # myCon.commit()
 # print('1 record deleted successfully')
+
+# login validator
+import time
+count = 0
+# while True:
+while count < 3:
+    fullname = input('Enter your name: ').strip()
+    password = input('Enter your password: ')
+    my_query = "SELECT full_name, password FROM registration_tb WHERE full_name=%s AND password=%s" 
+    val = (fullname, password)
+    myCursor.execute(my_query, val)
+    reg= myCursor.fetchone()
+    if reg:
+        print("logged in successfully")
+        break
+    else:
+        count +=1
+        print("invalid credencial! you have {3 -count}")
+        if count == 3:
+            print("you have exceeded your login limit. Try after 10s")
+            time.sleep(10)
+            count = 0
+        continue
+    
+    
+    
+    
+# TO UPDATE A DATA ON A TABLE IN THE DATA BASE 
+old_addres =input('Enter your old address: ')
+new_addres =input('Enter your new address: ')
+my_query = "UPDATE registration_tb SET address=%s WHERE address=%"
+val = {new_addres, old_addres}
+myCursor.execute(my_query, val)
+myCon.commit()
+print(myCursor.rowcount, )
+# HOW TO DELETE FROM THE DATA BASE
+my_query

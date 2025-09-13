@@ -366,6 +366,32 @@ questions = {
 registered_students = {}  
 students_completed = {}   
 
+def main():
+    while True:
+        print("""
+            WELCOME TO DESTINY GROUP OF SCHOOL
+            Select an option:
+            1. Register
+            2. Take the Test
+            3. Get Result
+            4. Exit
+        """)
+
+        user_option = input("Enter your option (1-4): ").strip()
+        if user_option == '1':
+            register_student()
+        elif user_option == '2':
+            take_test()
+        elif user_option == '3':
+            get_result()
+        elif user_option == '4':
+            print("Thanks for using our service!")
+            break
+        else:
+            print("Invalid selection! Please enter a valid option (1-4).")
+main()
+
+
 def register_student():
     while True: 
         name = input("Register your name: ").strip()
@@ -455,30 +481,6 @@ def get_result():
     else:
         print('This is a low performance, buckle up next time! ')
                 
-def main():
-    while True:
-        print("""
-            WELCOME TO DESTINY GROUP OF SCHOOL
-            Select an option:
-            1. Register
-            2. Take the Test
-            3. Get Result
-            4. Exit
-        """)
-
-        user_option = input("Enter your option (1-4): ").strip()
-        if user_option == '1':
-            register_student()
-        elif user_option == '2':
-            take_test()
-        elif user_option == '3':
-            get_result()
-        elif user_option == '4':
-            print("Thanks for using our service!")
-            break
-        else:
-            print("Invalid selection! Please enter a valid option (1-4).")
-main()
 
 
 

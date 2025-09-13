@@ -870,8 +870,51 @@
 # uba_acc_num= '20' + str(num)
 # print(uba_acc_num)
 
+while True:
+    email = input("Enter your email address: ").lower().strip()
+    if "@" in email and email.endswith(".com"):
+        print("✅ Valid email... continue the registration")
+        break
+    else:
+        print("⚠️ Invalid email... try again")
 
+
+
+while True:
+    email=input("Enter your email address: ").lower().strip()
+    at_index=email.find("@")
+    dot_com_index=email.find(".com")
+    text_btwn_dot_com= email[at_index +1 :dot_com_index]
+    if "@" in email and email.endswitch(".com"):
+        if text_btwn_dot_com.isalpha():
+            print("valid email......continue the registration")
+            break
+        else:
+            print("invalid email....try again")
+            continue
+    else:
+        print("invalid email.....try again")
+        continue
         
+while True:
+    email = input("Enter your email address: ").lower().strip()
+    
+    if "@" in email and "." in email:
+        at_index = email.find("@")
+        dot_index = email.rfind(".")   # find the last dot (works for .com, .org, .co.uk)
+        
+        if at_index < dot_index:  # ensure @ comes before the last dot
+            text_between = email[at_index+1 : dot_index]
+            
+            if text_between.isalpha():
+                print("✅ Valid email... continue the registration")
+                break
+            else:
+                print("⚠️ Invalid email: domain part must be alphabetic. Try again.")
+        else:
+            print("⚠️ Invalid email: dot must come after '@'. Try again.")
+    else:
+        print("⚠️ Invalid email format. Try again.")
         
         
         

@@ -1,3 +1,11 @@
+# text=input("Enter a word: ").lower()
+# reversed_text=text[::-1]
+# if text== reversed_text:
+#     print("Your text is palindrom")
+# else:
+#     print("Your text is palindrom")
+
+
 ###What is inbuilt python function? (Explain with example)
 # An inbuilt Python function refers to a function that is provided by the Python language itself as part of its standard library. These functions are readily available for use without requiring any additional installation or imports. Python has a wide range of these inbuilt functions, which help perform common tasks like data type conversions, mathematical operations, handling input/output, and more.
 # Examples of Inbuilt Python Functions:

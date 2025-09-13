@@ -66,7 +66,8 @@ def main():
     user_code=input("Enter USSD code to access bank service: ")
     if user_code != service_code:
         print("Invalid code. Access denied.")
-        return
+        return(user_code)
+    
     balance = 300000
     if login():
         while True:
@@ -84,9 +85,6 @@ def main():
             else:
                 print('Invalid choice. Please try again.')
 main()
-
-    
-    
 
 
 

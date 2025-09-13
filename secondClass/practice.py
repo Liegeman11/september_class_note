@@ -3,10 +3,12 @@
 #     print('The number you enter is an even number.')
 # else:
 #     print('The number you enter is an odd number.')
-    
-    
-    
+
 # val1=int(input('Enter a number: '))
+
+
+
+
 # val2=2
 # print(f'if the result is one the number you enter is an odd number and if it is zero the number you enter is an even number. Your result is {val1%val2}')
 # val2=[-4]
@@ -14,6 +16,8 @@
 # print(val1%val2)
 # print(val1>val2)
 # print(val1<val2)
+    
+    
     
     
 # score= 25
