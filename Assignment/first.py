@@ -17,7 +17,7 @@ print("Hello, World!")  # Outputs: Hello, World!
 # 2. **len()**: Returns the length of an object (like a string, list, or tuple).
 my_list = [1, 2, 3, 4]
 print(len(my_list))  # Outputs: 4
-
+    
 
 # 3. **type()**: Returns the type of an object.
 x = 10

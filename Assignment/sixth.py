@@ -331,9 +331,9 @@
 #             register_student()
 #         elif user_option == '2':
 #             take_test()
-#         elif user_option == '4':
-#             get_result()
 #         elif user_option == '3':
+#             get_result()
+#         elif user_option == '4':
 #             print("Thanks for using our service!")
 #             break
 #         else:
@@ -373,8 +373,10 @@ def main():
             Select an option:
             1. Register
             2. Take the Test
-            3. Get Result
-            4. Exit
+            3. Register courses
+            4. Get Result 
+            5.
+            6 Exit
         """)
 
         user_option = input("Enter your option (1-4): ").strip()
@@ -391,6 +393,23 @@ def main():
             print("Invalid selection! Please enter a valid option (1-4).")
 main()
 
+def Register_courses():
+    while True:
+        print(""" List of courses
+1. Biology
+2. Philosophy
+3. Chemistry
+4. English
+5. Mathematics
+6. Government
+7. Commerce
+8. Economics
+9. literature
+10. CRS
+11. IRS
+""")
+        choice=input("Choose five courses to register: ")
+        
 
 def register_student():
     while True: 
